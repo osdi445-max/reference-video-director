@@ -12,13 +12,15 @@ It turns character references, outfit references, scene references, relationship
 ## Best for
 
 - Couple POV / relationship short scenes
+- Strict first-person boyfriend / girlfriend POV
 - Fake anger / awkward comforting / playful teasing
-- Bedroom, home, travel, restaurant, and everyday scenes
+- Bedroom, home, couch, travel, restaurant, and everyday scenes
 - Reference-image character consistency
 - 15s / 30s short-form narrative video
-- Seedance, Hailuo, Kling, Veo, Sora and similar video models
+- Seedance, Hailuo, Kling, Veo, Sora, Runway and similar video models
 - Turning rough story beats into a timed prompt
 - Rewriting overly dramatic dialogue into natural couple conversation
+- Cleaning up rough video prompts to improve continuity and executability
 
 ## Core principles
 
@@ -50,15 +52,15 @@ Model: Seedance
 The Skill will automatically build:
 
 - Character Consistency
+- Reference Mapping
 - Outfit Consistency
 - Core Setting
 - Scene
 - Camera / POV
+- Continuity Anchors
 - Timeline
-- Dialogue
-- Micro-expressions
-- Physical Interaction
-- Continuity
+- Performance Notes
+- Off-screen Partner Performance
 - Sound Design
 - Negative Constraints
 - Model Adaptation

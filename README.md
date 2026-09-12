@@ -12,13 +12,15 @@
 ## 适合什么
 
 - 情侣 POV / 恋爱短剧
+- 严格第一人称男友 / 女友 POV
 - 女友假生气 / 男友哄人
-- 居家、卧室、旅行、餐厅等生活化场景
+- 居家、卧室、沙发、旅行、餐厅等生活化场景
 - 参考图角色一致性
 - 15 秒 / 30 秒短剧情
-- Seedance、Hailuo、Kling、Veo、Sora 等视频模型
+- Seedance、Hailuo、Kling、Veo、Sora、Runway 等视频模型
 - 将粗略剧情改造成时间轴 Prompt
 - 将“太像演戏”的对白改得更自然
+- 润色已有视频提示词，减少狗血感并提升可执行性
 
 ## 核心原则
 
@@ -50,15 +52,15 @@
 Skill 会自动完成：
 
 - Character Consistency
+- Reference Mapping
 - Outfit Consistency
 - Core Setting
 - Scene
 - Camera / POV
+- Continuity Anchors
 - Timeline
-- Dialogue
-- Micro-expressions
-- Physical Interaction
-- Continuity
+- Performance Notes
+- Off-screen Partner Performance
 - Sound Design
 - Negative Constraints
 - Model Adaptation
