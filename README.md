@@ -9,6 +9,8 @@
 
 它会根据角色参考图、服装参考图、场景参考图、人物关系、剧情想法和目标时长，生成更适合视频模型直接执行的完整提示词，重点处理人物一致性、情侣 POV、自然对白、微表情、手部互动、镜头连续性与真实生活感。
 
+仓库现在也包含一些轻量 Python 辅助模块，用于提示词流程、导出、媒体素材描述、latent HR 放大和系列化 Prompt 生成。
+
 ## 适合什么
 
 - 情侣 POV / 恋爱短剧
@@ -79,9 +81,14 @@ SKILL.md
 
 ```text
 reference-video-director/
+├── latent_hr.py
+├── media_asset.py
+├── nsfw_series.py
+├── processing.py
 ├── SKILL.md
 ├── README.md
 ├── README_EN.md
+├── workflow.py
 └── references/
     ├── zh-CN.md
     └── en.md

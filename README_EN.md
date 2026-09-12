@@ -9,6 +9,8 @@
 
 It turns character references, outfit references, scene references, relationship setup, rough story ideas, and target duration into production-ready video prompts. It focuses on identity consistency, couple POV, natural dialogue, micro-expressions, hand interaction, shot continuity, and believable everyday chemistry.
 
+The repository now also includes small Python helper modules for prompt workflows, export, media asset handling, latent HR upscaling, and series prompt generation.
+
 ## Best for
 
 - Couple POV / relationship short scenes
@@ -79,9 +81,14 @@ For Agent Skills / Codex-compatible clients, use the repository directory as the
 
 ```text
 reference-video-director/
+├── latent_hr.py
+├── media_asset.py
+├── nsfw_series.py
+├── processing.py
 ├── SKILL.md
 ├── README.md
 ├── README_EN.md
+├── workflow.py
 └── references/
     ├── zh-CN.md
     └── en.md
