@@ -1,6 +1,6 @@
 ---
 name: reference-video-director
-description: Creates production-ready reference-driven video prompts from character, outfit, scene, relationship, story, and duration inputs. Use for requests such as 情侣短剧、情侣互动、男友视角、女友视角、情侣POV、恋爱POV、参考图视频、15秒/30秒剧情、couple POV, boyfriend POV, girlfriend POV, romantic short scene, reference video prompt, or when a rough scene needs natural dialogue, micro-expressions, continuity, and model-specific optimization.
+description: Creates production-ready reference-driven video prompts from character, outfit, scene, relationship, story, and duration inputs. Use for requests such as 情侣短剧、情侣互动、男友视角、女友视角、情侣POV、恋爱POV、旅行情侣短片、餐厅情侣互动、参考图视频、15秒/30秒剧情、couple POV, boyfriend POV, girlfriend POV, travel couple short film, restaurant couple interaction, romantic daily-life POV, reference character video, or when a rough scene needs natural dialogue, micro-expressions, continuity, and model-specific optimization.
 ---
 
 # Reference Video Director
@@ -21,17 +21,19 @@ Activate when the user asks for one or more of the following:
 - romantic daily-life short scenes
 - natural couple dialogue
 - fake anger, teasing, awkward comforting, playful banter
+- travel, restaurant, bedroom, couch, or everyday outing couple scenes
 - 10s / 15s / 30s / 60s narrative video prompts
 - timeline-based prompt writing
 - character identity locking
 - outfit or scene continuity
+- prompt cleanup for rough, overly dramatic, or low-executability video prompts
 - optimization for Seedance, Hailuo, Kling, Veo, Sora, or comparable video generators
 
 Common Chinese triggers include:
-`情侣短剧` `情侣互动` `恋爱短剧` `男友视角` `女友视角` `情侣POV` `恋爱POV` `女友假生气` `男友哄女友` `情侣聊天` `打情骂俏` `甜蜜互动` `参考图视频` `视频剧情提示词`.
+`情侣短剧` `情侣互动` `恋爱短剧` `男友视角` `女友视角` `情侣POV` `恋爱POV` `女友假生气` `男友哄女友` `情侣聊天` `打情骂俏` `甜蜜互动` `旅行情侣短片` `餐厅情侣互动` `参考角色视频` `参考图视频` `视频剧情提示词` `帮我润色视频提示词`.
 
 Common English triggers include:
-`couple POV` `boyfriend POV` `girlfriend POV` `romantic short film` `couple interaction` `relationship POV` `romantic dialogue` `realistic couple video` `reference video prompt`.
+`couple POV` `boyfriend POV` `girlfriend POV` `romantic short film` `couple interaction` `relationship POV` `romantic dialogue` `realistic couple video` `travel couple short film` `restaurant couple interaction` `romantic daily-life POV` `reference character video` `rewrite this video prompt`.
 
 Do not activate for unrelated general writing or purely technical video encoding tasks.
 
@@ -155,14 +157,19 @@ Prefer:
 - brief repetition
 - understated replies
 - reaction before response
+- one simple idea per line
 
 Avoid long polished speeches.
+
+Avoid stacking multiple emotional beats into one line or making both characters speak at once in ways that are hard for video models to stage.
 
 A useful principle:
 
 `subtext > literal romantic wording`
 
 If the dialogue does not comfortably fit the duration, remove lines rather than making the characters speak unnaturally fast.
+
+If a beat works visually, let the pause carry it instead of forcing extra dialogue.
 
 ## Micro-expression rules
 
@@ -211,6 +218,20 @@ For boyfriend POV:
 - never reveal the full male body unless requested
 - treat the female lead looking into camera as looking at her partner
 
+For girlfriend POV:
+
+- the girlfriend's face must remain off-screen when the user wants strict first-person POV
+- a hand, sleeve edge, hair edge, knee, or blurred shoulder may appear
+- never reveal the full female body unless requested
+- treat the male lead looking into camera as looking at his partner
+
+For any first-person partner POV:
+
+- do not suddenly switch into detached third-person coverage unless the user requests it
+- keep camera height, partner distance, and left-right screen direction stable across consecutive beats
+- if a cut happens, preserve spatial orientation and emotional continuity
+- only use over-the-shoulder or mirror-visible framing when it does not violate the hidden-partner constraint
+
 Use mild handheld breathing motion.
 
 Avoid:
@@ -220,6 +241,7 @@ Avoid:
 - unnecessary orbit shots
 - music-video camera movement
 - a cut for every dialogue line
+- impossible reverse angles that reveal the hidden POV partner without explanation
 
 Recommended shot counts:
 
@@ -269,6 +291,23 @@ For hand contact, include:
 - real contact
 - natural entry and exit from frame
 - no sudden disappearance
+
+## Continuity rules
+
+Treat continuity as a visible invariant, not a reminder line.
+
+Keep stable whenever the scene is continuous:
+
+- partner positions
+- distance between camera and subject
+- screen direction
+- hand occupancy and object ownership
+- pillows, blankets, phones, cups, or other active props
+- hair placement after touch
+- clothing state after movement
+- lighting direction and brightness level
+
+If the story needs a change in position, emotion, or prop state, make the transition visible on-screen.
 
 ## Story engine
 
@@ -370,6 +409,11 @@ Prioritize:
 - limited complex hand choreography
 - clear cause-and-effect blocking
 
+Avoid:
+
+- too many new actions inside a single time block
+- rapid emotional reversals without visible transition
+
 ### Hailuo
 
 Prioritize:
@@ -378,6 +422,11 @@ Prioritize:
 - explicit action descriptions
 - one main action at a time
 - clear continuity reminders
+
+Avoid:
+
+- overloaded sentences that describe several simultaneous micro-actions
+- loose pronoun references when multiple characters are present
 
 ### Kling
 
@@ -388,7 +437,12 @@ Prioritize:
 - consistent blocking
 - slightly more cinematic camera language when useful
 
-### Veo / Sora
+Avoid:
+
+- vague transitions that break room geography
+- camera flourishes that change scene readability
+
+### Veo
 
 May include richer:
 
@@ -398,24 +452,71 @@ May include richer:
 - dialogue timing
 - subtle performance direction
 
+Avoid:
+
+- ornamental details that change identity, wardrobe, or room layout
+- poetic camera language without blocking information
+
+### Sora
+
+May include richer:
+
+- sound cues
+- environmental details
+- lens / camera behavior
+- dialogue timing
+- subtle performance direction
+
+Avoid:
+
+- large scene rewrites between adjacent beats
+- dense paragraphs without clear action order
+
+### Runway
+
+Prioritize:
+
+- concise shot-by-shot staging
+- stable framing and readable movement arcs
+- one dominant action per shot
+- clearly separated performance notes and camera notes
+
+Avoid:
+
+- mixing several camera moves into one sentence
+- overly dense dialogue in short durations
+
+### Unknown or comparable model
+
+Default to:
+
+- action-first wording
+- short timeline blocks
+- explicit continuity anchors
+- conservative camera behavior
+
 Do not add technical camera jargon unless it improves execution.
 
 ## Output format
 
 Produce a clean, directly copyable prompt with these sections when relevant:
 
-1. Character Consistency
-2. Outfit Consistency
-3. Core Setting
-4. Scene
-5. Camera / POV
-6. Timeline
-7. Performance Notes
-8. Male / Off-screen Partner Performance
-9. Continuity
-10. Sound Design
-11. Negative Constraints
-12. Model-specific notes
+1. Prompt Goal
+2. Reference Mapping
+3. Character Consistency
+4. Outfit Consistency
+5. Core Setting
+6. Scene
+7. Camera / POV
+8. Continuity Anchors
+9. Timeline
+10. Performance Notes
+11. Off-screen Partner Performance
+12. Sound Design
+13. Negative Constraints
+14. Model-specific notes
+
+When useful, start with a one- or two-line summary that locks the relationship, duration, POV, and target model.
 
 For each timeline block, include as needed:
 
@@ -426,6 +527,10 @@ For each timeline block, include as needed:
 - pause
 - camera behavior
 
+Reference Mapping should explicitly assign each provided image reference to its role when more than one reference image exists.
+
+Continuity Anchors should list only the scene elements that must stay stable across the prompt.
+
 Do not mechanically include empty sections.
 
 ## Editing an existing user prompt
@@ -434,7 +539,7 @@ If the user already wrote a detailed prompt, preserve the core story.
 
 Apply this order:
 
-`preserve story → reduce redundant dialogue → add pauses → add eye-line changes → add micro-expressions → fix physical continuity → reduce melodrama → improve relationship familiarity → simplify actions that are difficult for video models`
+`preserve story → reduce redundant dialogue → add pauses → add eye-line changes → add micro-expressions → fix physical continuity → reinforce POV discipline → reduce melodrama → improve relationship familiarity → simplify actions that are difficult for video models`
 
 Do not overwrite distinctive user ideas unless they conflict with the user's stated constraints.
 
@@ -483,6 +588,7 @@ Before returning the prompt, verify:
 - hand actions are feasible
 - no unnecessary extra characters
 - emotions are expressed through visible micro-actions
+- continuity anchors match the timeline
 - ending has a readable final beat
 
 The final result should feel less like a scripted romance scene and more like a believable moment that happened to be recorded.
